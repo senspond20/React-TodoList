@@ -4,6 +4,7 @@ import TodoTemplate from './components/TotoTemplate';
 import TodoList from './components/TodoList';
 import TodoHead from './components/TodoHead';
 import TodoCreate from './components/TodoCreate';
+import { TodoProvider } from './TodoContext';
 const GolobalStyle = createGlobalStyle`
   body {
     background: #e9ecef;
@@ -12,14 +13,14 @@ const GolobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <>
-    <GolobalStyle />
-    <TodoTemplate>
-       <TodoHead />
-       <TodoList />
-       <TodoCreate />
-    </TodoTemplate>
-    </>
+    <TodoProvider>
+      <GolobalStyle />
+      <TodoTemplate>
+        <TodoHead />
+        <TodoList />
+        <TodoCreate />
+      </TodoTemplate>
+    </TodoProvider>
   );
 }
 
